@@ -11,26 +11,24 @@ const Briefing = ({ data }) => {
         <h3 style={{ marginLeft: 20 }}>
           Utilize nossos serviçoes da Jusfy para gerar seus documentos:
         </h3>
-        <S.Wrapper>
-          <S.CustomLink
-            target="_blank"
-            href="https://homologa.jusfy.com.br/jurisprudencia"
-          >
-            Jurisprudências
-          </S.CustomLink>
-          <S.CustomLink
-            target="_blank"
-            href="https://homologa.jusfy.com.br/peticoes"
-          >
-            Petições
-          </S.CustomLink>
-          <S.CustomLink
-            target="_blank"
-            href="https://homologa.jusfy.com.br/jusfinder"
-          >
-            Consultas
-          </S.CustomLink>
-        </S.Wrapper>
+        <S.CustomLink
+          target="_blank"
+          href="https://homologa.jusfy.com.br/jurisprudencia"
+        >
+          Jurisprudências
+        </S.CustomLink>
+        <S.CustomLink
+          target="_blank"
+          href="https://homologa.jusfy.com.br/peticoes"
+        >
+          Petições
+        </S.CustomLink>
+        <S.CustomLink
+          target="_blank"
+          href="https://homologa.jusfy.com.br/jusfinder"
+        >
+          Consultas
+        </S.CustomLink>
       </>
     ),
   });
