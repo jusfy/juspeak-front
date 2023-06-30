@@ -54,7 +54,7 @@ const Briefing = ({ data }) => {
           Resumo
         </S.FirstTab>
         <S.Tab onClick={() => setTabSelected('nextSteps')}>
-          Próximos passo
+          Próximos passos
         </S.Tab>
         <S.Tab onClick={() => setTabSelected('transcription')}>
           Transcrição

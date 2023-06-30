@@ -26,3 +26,13 @@ export const ContentWrapper = styled.div`
   min-width: 611px;
   border-radius: ${({ theme }) => theme.border.radius};
 `;
+
+export const Input = styled.input`
+  display: none;
+`;
+
+export const Label = styled.label`
+  color: #40c78f;
+  font-weight: bold;
+  cursor: pointer;
+`;

@@ -8,7 +8,8 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   padding: 10px 20px;
   max-height: 343px;
-  overflow: scroll;
+  overflow-y: auto;
+  cursor: all-scroll;
 `;
 
 export const Title = styled.h1`
@@ -50,6 +51,7 @@ export const CustomLink = styled.a`
   cursor: pointer;
   display: block;
   width: fit-content;
+  margin-left: 20px;
   :hover {
     text-decoration: underline;
   }

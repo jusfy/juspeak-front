@@ -16,6 +16,21 @@ const GlobalStyle = createGlobalStyle`
     margin: 0
   }
 
+
+
+*::-webkit-scrollbar {
+  width: 3px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #41c78f;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+opacity: 0.8;
+}
+
+
+
   @media only screen and (min-width: 1024px) {
    #root {
     display: flex;

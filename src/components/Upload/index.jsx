@@ -52,6 +52,31 @@ const Upload = ({ setStep, setData }) => {
     event.stopPropagation();
   };
 
+  const handleFileChange = (event) => {
+    const audioFile = event.target.files[0];
+    console.log('Arquivo selecionado:', audioFile);
+
+    setIsLoading(true);
+    console.log(
+      'Arquivo de áudio:',
+      getFormDataFromBase64(audioFile).get('filename')
+    );
+    postTranscription(getFormDataFromBase64(audioFile))
+      .then((response) => {
+        return response.data;
+      })
+      .then(({ data }) => {
+        postProcess(data)
+          .then((response) => {
+            return response.data;
+          })
+          .then(({ data }) => {
+            setData(data);
+            setStep('BRIEFING');
+          });
+      });
+  };
+
   useEffect(() => {
     if (isLoading === false) {
       setStep('BRIEFING');
@@ -68,7 +93,16 @@ const Upload = ({ setStep, setData }) => {
       onDrop={handleDrop}
     >
       <SVG src={UploadLogo} />
-      <S.Text>Solte um Arquivo mp3 aqui ou navegue pelos Arquivos</S.Text>
+      <S.Text>
+        Solte um arquivo de áudio aqui ou{' '}
+        <S.Label htmlFor="fileInput">Selecione um arquivo</S.Label>
+      </S.Text>
+      <S.Input
+        id="fileInput"
+        type="file"
+        accept=".mp3,.mp4,.mpeg,.mpga,.m4a,.wav,.webm,.ogg"
+        onChange={handleFileChange}
+      />
     </S.Form>
   );
 
